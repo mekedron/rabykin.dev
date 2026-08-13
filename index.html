@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nikita Rabykin — Full-Stack Engineer</title>
+<meta name="description" content="CV of Nikita Rabykin, full-stack engineer and software architect based in Helsinki, Finland.">
+<link rel="icon" href="data:,">
+<style>
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, p, ul, ol, li, dl, dt, dd { margin: 0; padding: 0; }
+ul { list-style: none; }
+
+/* ---------- tokens ---------- */
+:root {
+  --ink:        #14161a;
+  --ink-soft:   #4a5057;
+  --ink-faint:  #767c84;
+  --rule:       #d9dce0;
+  --accent:     #14161a;
+  --page:       #ffffff;
+  --canvas:     #f4f4f2;
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --gutter: 7.5rem;   /* width of the left date column */
+}
+
+/* ---------- page ---------- */
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.sheet {
+  max-width: 52rem;
+  margin: 2.5rem auto;
+  padding: 3.25rem 3.5rem 3.75rem;
+  background: var(--page);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 12px 40px rgba(0,0,0,.07);
+}
+
+a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+a:hover { border-bottom-color: var(--accent); }
+
+/* ---------- header ---------- */
+.name {
+  font-size: 2.1rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.role {
+  margin-top: .35rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.contact {
+  margin-top: .9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1rem;
+  font-size: .875rem;
+  color: var(--ink-soft);
+}
+.contact a { border-bottom-color: transparent; }
+.contact a:hover { border-bottom-color: var(--rule); }
+
+.summary {
+  margin-top: 1.5rem;
+  font-size: .96rem;
+  color: var(--ink-soft);
+  max-width: 42rem;
+}
+
+/* ---------- sections ---------- */
+section { margin-top: 2.25rem; }
+
+.section-title {
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: .45rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.1rem;
+}
+
+/* ---------- entries: date rail + body ---------- */
+.entry {
+  display: grid;
+  grid-template-columns: var(--gutter) 1fr;
+  gap: 0 1.5rem;
+  break-inside: avoid;
+}
+.entry + .entry { margin-top: 1.5rem; }
+
+.when {
+  font-size: .8125rem;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  padding-top: .12rem;
+}
+.when small { display: block; font-size: .95em; }
+
+.entry-title {
+  font-size: .9875rem;
+  font-weight: 620;
+  letter-spacing: -0.005em;
+}
+.entry-meta {
+  font-size: .8375rem;
+  color: var(--ink-faint);
+  margin-top: .1rem;
+}
+
+.bullets { margin-top: .5rem; }
+.bullets li {
+  position: relative;
+  padding-left: .95rem;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+.bullets li + li { margin-top: .3rem; }
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: .1rem;
+  top: .62em;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+}
+
+/* nested roles inside one company */
+.roles { margin-top: .65rem; }
+.roles li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 1rem;
+  font-size: .875rem;
+  color: var(--ink-soft);
+  padding-top: .3rem;
+  border-top: 1px solid #eceef0;
+}
+.roles li:first-child { border-top: 0; padding-top: 0; }
+.roles .r-when { color: var(--ink-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------- projects ---------- */
+.projects li {
+  display: grid;
+  grid-template-columns: var(--gutter) 1fr;
+  gap: 0 1.5rem;
+  break-inside: avoid;
+}
+.projects li + li { margin-top: .55rem; }
+.p-tech {
+  grid-column: 1; grid-row: 1;
+  font-size: .8125rem;
+  color: var(--ink-faint);
+  padding-top: .1rem;
+}
+.p-name {
+  grid-column: 2; grid-row: 1;
+  font-size: .9rem;
+  font-weight: 620;
+}
+.p-name a { border-bottom-color: var(--rule); }
+.p-desc {
+  grid-column: 2; grid-row: 2;
+  font-size: .875rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- skills ---------- */
+.skills { display: grid; gap: .45rem; }
+.skills div {
+  display: grid;
+  grid-template-columns: var(--gutter) 1fr;
+  gap: 0 1.5rem;
+  font-size: .9rem;
+  break-inside: avoid;
+}
+.skills dt { font-size: .8125rem; color: var(--ink-faint); padding-top: .06rem; }
+.skills dd { color: var(--ink-soft); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 640px) {
+  .sheet { margin: 0; padding: 2rem 1.35rem 2.5rem; box-shadow: none; }
+  .entry, .skills div, .projects li { grid-template-columns: 1fr; gap: .2rem; }
+  .projects .p-tech, .projects .p-name, .projects .p-desc { grid-column: 1; grid-row: auto; }
+  .projects .p-tech { order: 2; }
+  .projects .p-desc { order: 3; }
+  .when { padding-top: 0; order: -1; }
+  .roles li { grid-template-columns: 1fr; }
+  .roles .r-when { font-size: .8125rem; }
+}
+
+/* ---------- print ---------- */
+@page { size: A4; margin: 11mm 14mm; }
+
+@media print {
+  :root { --gutter: 5.9rem; }
+  html, body { background: #fff; }
+  body {
+    font-size: 8.8pt;
+    line-height: 1.25;
+    color: #000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sheet { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { border-bottom: 0; }
+
+  .name { font-size: 17pt; }
+  .role { font-size: 9.6pt; margin-top: .1rem; }
+  .contact { font-size: 8pt; margin-top: .35rem; gap: .1rem .8rem; }
+  .summary { margin-top: .42rem; font-size: 8.6pt; max-width: none; }
+
+  section { margin-top: .62rem; }
+  .section-title { font-size: 7.2pt; margin-bottom: .32rem; padding-bottom: .15rem; }
+
+  .entry + .entry { margin-top: .4rem; }
+  .when { font-size: 7.8pt; padding-top: .06rem; }
+  .entry-title { font-size: 9.2pt; }
+  .entry-meta { font-size: 8pt; }
+  .bullets { margin-top: .2rem; }
+  .bullets li { font-size: 8.5pt; padding-left: .8rem; }
+  .bullets li + li { margin-top: .05rem; }
+  .roles { margin-top: .24rem; }
+  .roles li { font-size: 8.2pt; padding-top: .1rem; }
+  .projects li + li { margin-top: .24rem; }
+  .p-tech { font-size: 7.8pt; }
+  .p-name { font-size: 8.8pt; }
+  .p-desc { font-size: 8.4pt; }
+  .skills div { font-size: 8.5pt; }
+  .skills dt { font-size: 7.8pt; }
+  .skills { gap: .16rem; }
+
+  /* Only leaf blocks may resist breaking. A section taller than one page cannot
+     honour break-inside:avoid and gets pushed whole to the next page, leaving the
+     first page empty. */
+  .entry, .skills div, .roles li, .projects li { break-inside: avoid; }
+  .section-title { break-after: avoid; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header>
+    <h1 class="name">Nikita Rabykin</h1>
+    <p class="role">Full-Stack Developer — backend, frontend and cloud infrastructure</p>
+    <p class="contact">
+      <span>Helsinki, Finland</span>
+      <a href="mailto:nikita.rabykin@gmail.com">nikita.rabykin@gmail.com</a>
+      <a href="https://rabykin.dev">rabykin.dev</a>
+      <a href="https://github.com/mekedron">github.com/mekedron</a>
+    </p>
+    <p class="summary">
+      Eleven years building production systems end to end. I currently own the entire technical
+      stack of a Finnish tour operator single-handedly — from Terraform and Kubernetes up to the
+      storefront and the internal tools the office runs on.
+    </p>
+  </header>
+
+  <section>
+    <h2 class="section-title">Experience</h2>
+
+    <article class="entry">
+      <p class="when">Feb 2023 —<small>Present</small></p>
+      <div>
+        <h3 class="entry-title">Architect &amp; Lead Developer</h3>
+        <p class="entry-meta">Aikamatkat Oy (Timetravels) · Helsinki, Finland</p>
+        <ul class="bullets">
+          <li>Designed and operate an EKS cluster provisioned with Terraform (VPC, IRSA, autoscaling node groups, EBS/EFS CSI, ALB controller, External Secrets), with every workload delivered through ArgoCD GitOps and Argo Rollouts.</li>
+          <li>Author in-house Helm charts for Magento 2, WordPress and internal services, and self-host the company's internal toolchain in place of paid SaaS — analytics (ClickHouse, Metabase), data ingestion (Airbyte), workflow automation (n8n), wiki (Outline), around 20 applications in total.</li>
+          <li>Built the analytics platform: Airbyte ingestion pipelines with a custom source connector, MySQL-to-ClickHouse CDC replication, and Metabase dashboards used daily by sales, operations and finance.</li>
+          <li>Turned Magento 2 — a platform built to sell physical and digital goods — into a genuine booking system, through ~180 in-house modules: a tour product model (departures, itineraries, accommodation, activities, pickup points, price categories) with its own admin UI, date-based availability with waiting lists, and passenger lists with group-leader management.</li>
+          <li>Built the commerce edges around it: Stripe and OP Bank payment flows with online refunds and back-office payments, template-driven bulk generation of a whole season's products, order automation, and the GraphQL layer the storefront consumes.</li>
+          <li>Rebuilt that storefront as a headless React SSR frontend on the Magento 2 GraphQL API (TypeScript, Vite, Node/Express).</li>
+          <li>Building and self-hosting that platform rather than licensing a managed one keeps the total cost of running an €10M-revenue e-commerce operation to a fraction of the €100–150k a year the commercial alternatives would charge.</li>
+          <li>Carry the platform through season openings, when most of a year's bookings arrive within a few days — autoscaling on EKS, blue-green releases that never pause sales, and New Relic APM across backend traces, logs and browser-side performance.</li>
+          <li>Built <em>List Builder</em>, the internal operations tool (Laravel, React, Inertia, TypeScript) that replaced the spreadsheet workflow for assigning travellers to buses, ferries and hotels.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="when">Jun 2022 —<small>Jan 2023</small></p>
+      <div>
+        <h3 class="entry-title">Senior Software Engineer</h3>
+        <p class="entry-meta">SixBySix · Contract · Glasgow, United Kingdom</p>
+        <ul class="bullets">
+          <li>Built the agency's internal client portal (Laravel, Vue.js): a task tracker running on Jira's API, so clients followed their tickets without ever being handed Jira access.</li>
+          <li>Backend and frontend delivery on Magento 2 client projects.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="when">Jul 2017 —<small>Apr 2022</small></p>
+      <div>
+        <h3 class="entry-title">Solution Architect &amp; Project Lead</h3>
+        <p class="entry-meta">Onilab · Minsk, Belarus</p>
+        <ul class="bullets">
+          <li>Joined as a junior and progressed to solution architect, ending up leading four developers across several concurrent projects and mentoring the juniors who joined after me.</li>
+          <li>Long-running delivery on a European retailer's Magento 2 Enterprise store, a catalogue of roughly a million products.</li>
+          <li>Led a media content management tool for a US client (Node.js, React) — a Dropbox equivalent specialised in video and photography, with bulk operations such as stamping copyright across an entire library.</li>
+          <li>Ran the hosting for these projects on the pre-Kubernetes AWS stack — EC2, RDS, autoscaling groups, load balancers, CloudFront — configured by hand, before infrastructure-as-code was part of the picture.</li>
+          <li>Built React frontends across client projects, and took over architecture of the Timetravels platform — which I have now maintained for seven years across two companies.</li>
+        </ul>
+        <ul class="roles">
+          <li><span>Solution Architect &amp; Project Lead — Magento 2 CE</span><span class="r-when">2020 – 2022</span></li>
+          <li><span>Lead Developer — headless PWA checkout, then a media content management tool (Node.js / TypeScript / React)</span><span class="r-when">2021 – 2022</span></li>
+          <li><span>Developer — European industrial retailer, Magento 2 Enterprise</span><span class="r-when">2018 – 2020</span></li>
+          <li><span>Junior Full-Stack Developer — Magento 1 &amp; 2 CE</span><span class="r-when">2017 – 2018</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <p class="when">Aug 2014 —<small>Jul 2017</small></p>
+      <div>
+        <h3 class="entry-title">Full-Stack Developer</h3>
+        <p class="entry-meta">Freelance · Belarus</p>
+        <ul class="bullets">
+          <li>Dozens of client sites and web stores in PHP (Laravel, Kohana), 1C-Bitrix, MODX and WordPress — including catalogues of 20,000+ products and the Python scrapers that populated them.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2 class="section-title">Open Source</h2>
+
+    <ul class="projects">
+      <li>
+        <span class="p-name"><a href="https://live.tips">live.tips</a></span>
+        <span class="p-desc">Live tip jar for street performers — one QR code on stage, tips paid straight into the artist's own Stripe account and shown live on their device.</span>
+        <span class="p-tech">Flutter · Firebase</span>
+      </li>
+      <li>
+        <span class="p-name"><a href="https://github.com/mekedron/ClipSlop">ClipSlop</a></span>
+        <span class="p-desc">System-wide AI text transformations for macOS bound to hotkeys, across OpenAI, Anthropic, Ollama and any compatible provider.</span>
+        <span class="p-tech">Swift · SwiftUI</span>
+      </li>
+      <li>
+        <span class="p-name"><a href="https://github.com/mekedron/wolt-cli">wolt-cli</a> &amp; <a href="https://github.com/mekedron/wolt-stats">wolt-stats</a></span>
+        <span class="p-desc">Unofficial Go CLI for Wolt — browse venues, search items and build a cart from the terminal — paired with a dashboard that syncs your order history into local SQLite.</span>
+        <span class="p-tech">Go · SvelteKit</span>
+      </li>
+      <li>
+        <span class="p-name"><a href="https://github.com/mekedron/PieSwitcher">PieSwitcher</a></span>
+        <span class="p-desc">Radial window switcher for macOS — a pie-menu replacement for Cmd-Tab and Mission Control.</span>
+        <span class="p-tech">Swift · SwiftUI</span>
+      </li>
+      <li>
+        <span class="p-name"><a href="https://github.com/mekedron/HiddenBarIcons">HiddenBarIcons</a></span>
+        <span class="p-desc">Menu-bar utility that recovers the icons macOS hides under the MacBook notch. Shipped via Homebrew with Sparkle auto-updates.</span>
+        <span class="p-tech">Swift</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="section-title">Skills</h2>
+    <dl class="skills">
+      <div><dt>Languages</dt><dd>PHP, TypeScript, JavaScript, Python, Swift, SQL, Bash</dd></div>
+      <div><dt>Backend</dt><dd>Laravel, Magento 2, Node.js, GraphQL, MySQL, PostgreSQL, ClickHouse, Redis, RabbitMQ</dd></div>
+      <div><dt>Frontend</dt><dd>React, Inertia.js, Vue.js, Tailwind CSS, Vite, server-side rendering</dd></div>
+      <div><dt>Infrastructure</dt><dd>AWS (EKS, RDS, EFS, ECR), Kubernetes, Terraform, Helm, ArgoCD, Docker, GitHub Actions, New Relic, Cloudflare</dd></div>
+      <div><dt>Data &amp; mobile</dt><dd>Airbyte, Metabase, CDC pipelines, payment and banking integrations; Flutter, SwiftUI</dd></div>
+    </dl>
+  </section>
+
+</main>
+</body>
+</html>
