@@ -146,11 +146,13 @@ section { margin-top: 2.25rem; }
   grid-template-columns: 1fr auto;
   gap: 0 1rem;
   font-size: .875rem;
+  line-height: 1.4;
   color: var(--ink-soft);
-  padding-top: .3rem;
+  padding: .28rem 0;
   border-top: 1px solid #eceef0;
 }
 .roles li:first-child { border-top: 0; padding-top: 0; }
+.roles li:last-child { padding-bottom: 0; }
 .roles .r-when { color: var(--ink-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ---------- projects ---------- */
@@ -235,7 +237,7 @@ section { margin-top: 2.25rem; }
   .bullets li { font-size: 8.5pt; padding-left: .8rem; }
   .bullets li + li { margin-top: .05rem; }
   .roles { margin-top: .24rem; }
-  .roles li { font-size: 8.2pt; padding-top: .1rem; }
+  .roles li { font-size: 8.2pt; line-height: 1.38; padding: .17rem 0; }
   .projects li + li { margin-top: .24rem; }
   .p-tech { font-size: 7.8pt; }
   .p-name { font-size: 8.8pt; }
@@ -282,7 +284,7 @@ section { margin-top: 2.25rem; }
         <ul class="bullets">
           <li>Designed and operate an EKS cluster provisioned with Terraform (VPC, IRSA, autoscaling node groups, EBS/EFS CSI, ALB controller, External Secrets), with every workload delivered through ArgoCD GitOps and Argo Rollouts.</li>
           <li>Author in-house Helm charts for Magento 2, WordPress and internal services, and self-host the company's internal toolchain in place of paid SaaS — analytics (ClickHouse, Metabase), data ingestion (Airbyte), workflow automation (n8n), wiki (Outline), around 20 applications in total.</li>
-          <li>Built the analytics platform: Airbyte ingestion pipelines with a custom source connector, MySQL-to-ClickHouse CDC replication, and Metabase dashboards used daily by sales, operations and finance.</li>
+          <li>Built the analytics platform — a warehouse that pulls the whole business into one place: Airbyte pipelines from Google Analytics and Search Console, Meta Ads, Stripe and Bókun, plus MySQL-to-ClickHouse CDC replication of the store itself, reported on through Metabase dashboards used daily by sales, operations and finance.</li>
           <li>Turned Magento 2 — a platform built to sell physical and digital goods — into a genuine booking system, through ~180 in-house modules: a tour product model (departures, itineraries, accommodation, activities, pickup points, price categories) with its own admin UI, date-based availability with waiting lists, and passenger lists with group-leader management.</li>
           <li>Built the commerce edges around it: Stripe and OP Bank payment flows with online refunds and back-office payments, template-driven bulk generation of a whole season's products, order automation, and the GraphQL layer the storefront consumes.</li>
           <li>Rebuilt that storefront as a headless React SSR frontend on the Magento 2 GraphQL API (TypeScript, Vite, Node/Express).</li>
