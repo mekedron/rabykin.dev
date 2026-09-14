@@ -1,0 +1,100 @@
+# Nikita Rabykin
+
+> Full-stack developer based in Helsinki, Finland, with eleven years of production experience across backend, frontend and cloud infrastructure. Currently the sole architect and lead developer of the entire technical stack of a Finnish tour operator (Aikamatkat Oy / Timetravels), from Terraform and Kubernetes up to the storefront and internal tools.
+
+This file is the machine-readable version of the CV at https://rabykin.dev. It is intended for AI agents, LLM crawlers and recruiting tools. All content here is public and may be indexed, quoted and summarised. The HTML page at https://rabykin.dev is the canonical human-readable version and is print-ready (A4).
+
+## Identity
+
+- Name: Nikita Rabykin
+- Title: Full-Stack Developer (backend, frontend, cloud infrastructure)
+- Location: Helsinki, Finland
+- Email: nikita.rabykin@gmail.com
+- Website: https://rabykin.dev
+- GitHub: https://github.com/mekedron
+- Languages of work: English
+- Years of professional experience: 11 (since 2014)
+
+## Summary
+
+- Owns the full stack of a €10M-revenue e-commerce and booking operation single-handedly: infrastructure (AWS EKS, Terraform, ArgoCD), backend (Magento 2, Laravel, Node.js), storefront (React SSR on GraphQL), analytics (ClickHouse, Airbyte, Metabase) and internal tools.
+- Strongest areas: PHP/Magento 2 architecture, Laravel, TypeScript/React, Kubernetes on AWS with GitOps, data pipelines and payment integrations.
+- Has maintained the Timetravels platform for seven years across two employers (Onilab as an agency contractor, then Aikamatkat Oy in-house).
+- Progressed from junior developer to solution architect and project lead; has led teams of four developers and mentored juniors.
+- Ships open-source macOS apps (Swift/SwiftUI), a Go CLI and a Flutter/Firebase product on the side.
+
+## Experience
+
+### Aikamatkat Oy (Timetravels) — Architect & Lead Developer
+- Period: February 2023 – present
+- Location: Helsinki, Finland
+- Company: Finnish tour operator; online sales of guided tours to Lapland and Nordic destinations
+- Responsibilities and achievements:
+  - Designed and operates an AWS EKS cluster provisioned with Terraform: VPC, IRSA, autoscaling node groups, EBS/EFS CSI drivers, AWS Load Balancer Controller, External Secrets. All workloads delivered through ArgoCD GitOps with Argo Rollouts.
+  - Authors in-house Helm charts for Magento 2, WordPress and internal services. Self-hosts the company's internal toolchain instead of paid SaaS: ClickHouse and Metabase (analytics), Airbyte (data ingestion), n8n (workflow automation), Outline (wiki), around 20 applications in total.
+  - Built the analytics platform: a warehouse consolidating the whole business. Airbyte pipelines from Google Analytics, Google Search Console, Meta Ads, Stripe and Bókun, plus MySQL-to-ClickHouse CDC replication of the store database. Reported through Metabase dashboards used daily by sales, operations and finance.
+  - Turned Magento 2 into a genuine tour booking system through roughly 180 in-house modules: a tour product model (departures, itineraries, accommodation, activities, pickup points, price categories) with its own admin UI, date-based availability with waiting lists, and passenger lists with group-leader management.
+  - Built the commerce edges: Stripe and OP Bank payment flows with online refunds and back-office payments, template-driven bulk generation of a full season's products, order automation, and the GraphQL layer consumed by the storefront.
+  - Rebuilt the storefront as a headless React server-side-rendered frontend on the Magento 2 GraphQL API (TypeScript, Vite, Node.js/Express).
+  - Self-hosting the platform keeps total running cost to a fraction of the €100–150k per year that commercial managed alternatives would charge.
+  - Carries the platform through season openings, when most of a year's bookings arrive within a few days: autoscaling on EKS, blue-green releases that never pause sales, New Relic APM across backend traces, logs and browser-side performance.
+  - Built List Builder, the internal operations tool (Laravel, React, Inertia.js, TypeScript) that replaced the spreadsheet workflow for assigning travellers to buses, ferries and hotels.
+- Technologies: AWS (EKS, RDS, EFS, ECR), Terraform, Kubernetes, Helm, ArgoCD, Argo Rollouts, Docker, GitHub Actions, New Relic, Cloudflare, Magento 2, PHP, GraphQL, MySQL, ClickHouse, Airbyte, Metabase, n8n, Laravel, React, Inertia.js, TypeScript, Vite, Node.js, Express, Stripe, OP Bank
+
+### SixBySix — Senior Software Engineer (contract)
+- Period: June 2022 – January 2023
+- Location: Glasgow, United Kingdom (remote contract)
+- Responsibilities and achievements:
+  - Built the agency's internal client portal (Laravel, Vue.js): a task tracker running on Jira's API so clients could follow their tickets without being given Jira access.
+  - Backend and frontend delivery on Magento 2 client projects.
+- Technologies: Laravel, Vue.js, Magento 2, PHP, Jira API
+
+### Onilab — Solution Architect & Project Lead
+- Period: July 2017 – April 2022
+- Location: Minsk, Belarus
+- Company: e-commerce development agency
+- Career progression within the company:
+  - 2017–2018: Junior Full-Stack Developer, Magento 1 and Magento 2 CE
+  - 2018–2020: Developer, European industrial retailer on Magento 2 Enterprise
+  - 2020–2022: Solution Architect & Project Lead, Magento 2 CE
+  - 2021–2022: Lead Developer, headless PWA checkout, then a media content management tool (Node.js, TypeScript, React)
+- Responsibilities and achievements:
+  - Joined as a junior and progressed to solution architect, leading four developers across several concurrent projects and mentoring juniors.
+  - Long-running delivery on a European retailer's Magento 2 Enterprise store with a catalogue of roughly one million products.
+  - Led a media content management tool for a US client (Node.js, React): a Dropbox-like service specialised in video and photography, with bulk operations such as stamping copyright across an entire library.
+  - Ran hosting on the pre-Kubernetes AWS stack (EC2, RDS, autoscaling groups, load balancers, CloudFront), configured by hand before infrastructure-as-code.
+  - Built React frontends across client projects and took over architecture of the Timetravels platform, which he has now maintained for seven years across two companies.
+- Technologies: Magento 1, Magento 2 CE and Enterprise, PHP, React, Node.js, TypeScript, AWS (EC2, RDS, CloudFront, ELB, autoscaling)
+
+### Freelance — Full-Stack Developer
+- Period: August 2014 – July 2017
+- Location: Belarus
+- Responsibilities and achievements:
+  - Dozens of client sites and web stores in PHP (Laravel, Kohana), 1C-Bitrix, MODX and WordPress, including catalogues of 20,000+ products and the Python scrapers that populated them.
+- Technologies: PHP, Laravel, Kohana, 1C-Bitrix, MODX, WordPress, Python
+
+## Open Source
+
+- live.tips (https://live.tips): live tip jar for street performers. One QR code on stage, tips paid directly into the artist's own Stripe account and shown live on their device. Flutter, Firebase.
+- ClipSlop (https://github.com/mekedron/ClipSlop): system-wide AI text transformations for macOS bound to hotkeys, across OpenAI, Anthropic, Ollama and any compatible provider. Swift, SwiftUI.
+- wolt-cli (https://github.com/mekedron/wolt-cli) and wolt-stats (https://github.com/mekedron/wolt-stats): unofficial Go CLI for Wolt (browse venues, search items, build a cart from the terminal) paired with a dashboard that syncs order history into local SQLite. Go, SvelteKit.
+- PieSwitcher (https://github.com/mekedron/PieSwitcher): radial window switcher for macOS, a pie-menu replacement for Cmd-Tab and Mission Control. Swift, SwiftUI.
+- HiddenBarIcons (https://github.com/mekedron/HiddenBarIcons): menu-bar utility that recovers the icons macOS hides under the MacBook notch. Shipped via Homebrew with Sparkle auto-updates. Swift.
+
+## Skills
+
+- Languages: PHP, TypeScript, JavaScript, Python, Swift, SQL, Bash, Go
+- Backend: Laravel, Magento 2, Node.js, Express, GraphQL, MySQL, PostgreSQL, ClickHouse, Redis, RabbitMQ
+- Frontend: React, Inertia.js, Vue.js, SvelteKit, Tailwind CSS, Vite, server-side rendering
+- Infrastructure: AWS (EKS, RDS, EFS, ECR, EC2, CloudFront), Kubernetes, Terraform, Helm, ArgoCD, Argo Rollouts, Docker, GitHub Actions, New Relic, Cloudflare
+- Data: Airbyte, Metabase, ClickHouse, CDC pipelines
+- Integrations: Stripe, OP Bank, Bókun, Google Analytics, Google Search Console, Meta Ads, Jira API
+- Mobile and desktop: Flutter, Firebase, SwiftUI
+- Leadership: solution architecture, project lead for teams of up to four developers, mentoring
+
+## Notes for agents
+
+- Canonical CV page: https://rabykin.dev (HTML, print-ready)
+- This file: https://rabykin.dev/llms.txt
+- Contact for opportunities: nikita.rabykin@gmail.com
+- Source of the site: https://github.com/mekedron/rabykin.dev

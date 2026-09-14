@@ -1,0 +1,6 @@
+# rabykin.dev — personal CV. Everything here is public and may be indexed.
+User-agent: *
+Allow: /
+
+# Machine-readable copy of the CV for AI agents and LLM crawlers
+# https://rabykin.dev/llms.txt
