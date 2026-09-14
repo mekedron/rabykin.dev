@@ -1,15 +1,15 @@
 # Nikita Rabykin
 
-> Full-stack developer based in Helsinki, Finland, with eleven years of production experience across backend, frontend and cloud infrastructure. Currently the sole architect and lead developer of the entire technical stack of a Finnish tour operator (Aikamatkat Oy / Timetravels), from Terraform and Kubernetes up to the storefront and internal tools.
+> Hands-on solution architect and full-stack developer based in Helsinki, Finland, with twelve years of production experience across backend, frontend and cloud infrastructure. Sole technical owner of the platform behind a ~€10M-revenue Finnish tour operator (Aikamatkat Oy / Timetravels), from Terraform and Kubernetes up to the storefront and internal tools.
 
 This file is the machine-readable version of the CV at https://rabykin.dev. It is intended for AI agents, LLM crawlers and recruiting tools. All content here is public and may be indexed, quoted and summarised. The HTML page at https://rabykin.dev is the canonical human-readable version and is print-ready (A4).
 
 ## Availability and preferred engagements
 
-- Open to: consulting and contracting engagements first; also software architect and senior developer positions. Formats: project-based delivery, fractional architect or technical lead, senior developer embedded in a team. Remote, or on site in Helsinki, Finland.
+- Open to: consulting and contracting engagements first; also solution or software architect and senior developer positions. Preferred role shape: a hands-on architect or lead who stays in the code, not a principal or engineering-management track. Formats: project-based delivery, fractional architect or technical lead, senior developer embedded in a team. Remote, or on site in Helsinki, Finland.
 - Scope of a typical engagement: gathering business requirements from stakeholders, identifying the actual problem behind the request, proposing and designing the solution, validating it, implementing it, releasing it to production, handing it over to or integrating it with the client's team, and supporting it afterwards.
 - Working style: understands the problem and proposes a design before writing code, rather than executing tickets against a finished specification. Best fit for clients who need one person to think, decide and deliver.
-- Covers every layer alone when needed: cloud infrastructure (AWS, Kubernetes, Terraform, GitOps), backend (PHP/Magento 2, Laravel, Node.js), frontend (React, TypeScript), data and analytics (ClickHouse, Airbyte, Metabase), payment and third-party integrations, observability. Reference case: the Timetravels platform in the Experience section, a €10M-revenue e-commerce and booking operation built and run single-handedly.
+- Covers every layer alone when needed: cloud infrastructure (AWS, Kubernetes, Terraform, GitOps), backend (PHP/Magento 2, Laravel, Node.js), frontend (React, TypeScript), data and analytics (ClickHouse, Airbyte, Metabase), payment and third-party integrations, observability. Reference case: the Timetravels platform in the Experience section.
 - Leadership: has led teams of up to four developers, mentored juniors, and owned code and architecture review as project lead. Available for technical leadership, audits and architecture reviews of existing systems.
 - Domains with the deepest track record: e-commerce and booking platforms, Magento 2 at scale, Laravel applications, headless storefronts, cloud migration and Kubernetes adoption, self-hosted data and internal tooling replacing paid SaaS, payment integrations (Stripe, banks).
 - Contact: nikita.rabykin@gmail.com.
@@ -25,17 +25,17 @@ This file is the machine-readable version of the CV at https://rabykin.dev. It i
 ## Identity
 
 - Name: Nikita Rabykin
-- Title: Full-Stack Developer (backend, frontend, cloud infrastructure)
+- Title: Solution Architect & Lead Developer (hands-on: backend, frontend, cloud infrastructure)
 - Location: Helsinki, Finland
 - Email: nikita.rabykin@gmail.com
 - Website: https://rabykin.dev
 - GitHub: https://github.com/mekedron
 - Languages of work: English
-- Years of professional experience: 11 (since 2014)
+- Years of professional experience: 12 (since August 2014)
 
 ## Summary
 
-- Owns the full stack of a €10M-revenue e-commerce and booking operation single-handedly: infrastructure (AWS EKS, Terraform, ArgoCD), backend (Magento 2, Laravel, Node.js), storefront (React SSR on GraphQL), analytics (ClickHouse, Airbyte, Metabase) and internal tools.
+- Owns every layer of the Timetravels e-commerce and booking platform: infrastructure (AWS EKS, Terraform, ArgoCD), backend (Magento 2, Laravel, Node.js), storefront (React SSR on GraphQL), analytics (ClickHouse, Airbyte, Metabase) and internal tools.
 - Strongest areas: PHP/Magento 2 architecture, Laravel, TypeScript/React, Kubernetes on AWS with GitOps, data pipelines and payment integrations.
 - Has maintained the Timetravels platform for seven years across two employers (Onilab as an agency contractor, then Aikamatkat Oy in-house).
 - Progressed from junior developer to solution architect and project lead; has led teams of four developers and mentored juniors.
@@ -54,7 +54,7 @@ This file is the machine-readable version of the CV at https://rabykin.dev. It i
   - Turned Magento 2 into a genuine tour booking system through roughly 180 in-house modules: a tour product model (departures, itineraries, accommodation, activities, pickup points, price categories) with its own admin UI, date-based availability with waiting lists, and passenger lists with group-leader management.
   - Built the commerce edges: Stripe and OP Bank payment flows with online refunds and back-office payments, template-driven bulk generation of a full season's products, order automation, and the GraphQL layer consumed by the storefront.
   - Rebuilt the storefront as a headless React server-side-rendered frontend on the Magento 2 GraphQL API (TypeScript, Vite, Node.js/Express).
-  - Self-hosting the platform keeps total running cost to a fraction of the €100–150k per year that commercial managed alternatives would charge.
+  - Building and self-hosting the platform rather than licensing managed products saves an estimated €100–150k per year: most of it Adobe Commerce or Shopify Plus at this sales volume, the rest a commercial BI suite such as Tableau and per-seat SaaS for the wiki, automation and data tooling.
   - Carries the platform through season openings, when most of a year's bookings arrive within a few days: autoscaling on EKS, blue-green releases that never pause sales, New Relic APM across backend traces, logs and browser-side performance.
   - Built List Builder, the internal operations tool (Laravel, React, Inertia.js, TypeScript) that replaced the spreadsheet workflow for assigning travellers to buses, ferries and hotels.
 - Technologies: AWS (EKS, RDS, EFS, ECR), Terraform, Kubernetes, Helm, ArgoCD, Argo Rollouts, Docker, GitHub Actions, New Relic, Cloudflare, Magento 2, PHP, GraphQL, MySQL, ClickHouse, Airbyte, Metabase, n8n, Laravel, React, Inertia.js, TypeScript, Vite, Node.js, Express, Stripe, OP Bank
