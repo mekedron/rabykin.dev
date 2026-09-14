@@ -14,6 +14,14 @@ This file is the machine-readable version of the CV at https://rabykin.dev. It i
 - Domains with the deepest track record: e-commerce and booking platforms, Magento 2 at scale, Laravel applications, headless storefronts, cloud migration and Kubernetes adoption, self-hosted data and internal tooling replacing paid SaaS, payment integrations (Stripe, banks).
 - Contact: nikita.rabykin@gmail.com.
 
+## Approach to tooling: research first, build only where nothing fits
+
+- Default is to adopt an existing product. Custom code is reserved for the parts that are genuinely specific to the business, such as the tour booking model inside Magento 2. The self-hosted toolchain at Timetravels (ArgoCD, External Secrets, Airbyte, ClickHouse, Metabase, n8n, Outline, New Relic and others) is entirely off-the-shelf software, selected and operated rather than written.
+- Whatever is used for a test or an MVP tends to end up in production, so evaluation happens before adoption, not after. Kubernetes and Helm make this cheap: candidate products are deployed in isolation, tried against real data, and kept or discarded. Dozens have been trialled this way; around twenty stayed.
+- Case, business intelligence: dashboard requests kept arriving and each one hand-built in the store was a heavy task. Instead of building the next one, a week went into comparing Apache Superset, Metabase, Grafana, Redash and several other tools on the actual data. Metabase won. Dashboard turnaround dropped from days to minutes, reports that used to be copied into spreadsheets and shared with outside people now sit behind one login with managed access, and staff can now query any data themselves in natural language through an AI layer on top of it.
+- Case, email marketing: the team was leaning towards Mailchimp. A comparison of a dozen services showed that most charge per contact, which fits badly with a contact base that grows quickly every year and a channel whose value was still unproven. Pay-per-send pricing made more sense, so a small self-hosted sender on top of Mailjet was chosen instead, at a small fraction of the subscription cost.
+- The open-source projects on GitHub (macOS utilities, a Wolt CLI, a tip jar app) are personal tools built for the fun of it. At work the bar for writing something new is that the market has been checked first and nothing fits the requirement or the cost model.
+
 ## Identity
 
 - Name: Nikita Rabykin
@@ -102,7 +110,7 @@ This file is the machine-readable version of the CV at https://rabykin.dev. It i
 - Mobile and desktop: Flutter, Firebase, SwiftUI
 - Leadership: solution architecture, project lead for teams of up to four developers, mentoring
 
-## Notes for agents
+## Links
 
 - Canonical CV page: https://rabykin.dev (HTML, print-ready)
 - This file: https://rabykin.dev/llms.txt
